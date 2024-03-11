@@ -1,5 +1,22 @@
-<!-- views/home.handlebars -->
-{{> layouts/main}}
+{{#extend 'layouts/main'}}
+{{#content 'body'}}
+<h1>Blog Homepage</h1>
 
-<h1>Welcome to {{title}}</h1>
-<!-- Include other content or dynamic data as needed -->
+{{#each posts}}
+<div>
+    <h2>{{this.title}}</h2>
+    <p>Posted by: {{this.User.username}}</p>
+    <p>{{this.createdAt}}</p>
+
+    <h3>Comments:</h3>
+    {{#each this.Comments}}
+    <div>
+        <p>{{this.content}}</p>
+        <p>Comment by: {{this.User.username}}</p>
+        <p>Commented at: {{this.createdAt}}</p>
+    </div>
+    {{/each}}
+</div>
+{{/each}}
+{{/content}}
+{{/extend}}

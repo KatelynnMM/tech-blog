@@ -16,7 +16,7 @@ Comment.init(
             allowNull: false,
         },
         createdAt: {
-            type: DataTypes.TIMESTAMP,
+            type: DataTypes.DATE,
             defaultValue: DataTypes.NOW,
             allowNull: false,
         },
@@ -43,3 +43,4 @@ Comment.init(
 );
 
 module.exports = Comment;
+

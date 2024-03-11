@@ -20,7 +20,7 @@ Post.init(
             allowNull: false,
         },
         createdAt: {
-            type: DataTypes.TIMESTAMP,
+            type: DataTypes.DATE, // Corrected data type
             defaultValue: DataTypes.NOW,
             allowNull: false,
         },

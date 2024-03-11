@@ -1,0 +1,20 @@
+{{#extend 'layouts/main'}}
+{{#content 'body'}}
+<h1>User Dashboard</h1>
+
+{{#each userPosts}}
+<div>
+    <h2>{{this.title}}</h2>
+    <p>{{this.createdAt}}</p>
+
+    <h3>Comments:</h3>
+    {{#each this.Comments}}
+    <div>
+        <p>{{this.content}}</p>
+        <p>Commented at: {{this.createdAt}}</p>
+    </div>
+    {{/each}}
+</div>
+{{/each}}
+{{/content}}
+{{/extend}}
